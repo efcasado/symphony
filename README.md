@@ -1,5 +1,6 @@
 # Symphony
 [![Travis](https://img.shields.io/travis/efcasado/symphony.svg?style=flat-square)](https://travis-ci.org/efcasado/symphony)
+[![Coverage Status](https://coveralls.io/repos/github/efcasado/symphony/badge.svg?branch=master)](https://coveralls.io/github/efcasado/symphony?branch=master)
 
 An Elixir client for [Orchestrate](https://orchestrate.io/).
 
