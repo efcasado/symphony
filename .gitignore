@@ -1,0 +1,11 @@
+/_build
+/archives
+/cover
+/deps
+/doc
+/packages
+
+erl_crash.dump
+*.ez
+registry.ets*
+*~
