@@ -4,6 +4,9 @@
 
 An Elixir client for [Orchestrate](https://orchestrate.io/).
 
+Orchestrate unifies multiple databases through a [simple REST API](https://orchestrate.io/docs/apiref#overview).
+It runs as a service and supports queries like full-text search, events,
+graph, and key/value.
 
 ## Author(s)
 - Enrique Fernandez `<efcasado@gmail.com>`
