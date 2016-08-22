@@ -12,6 +12,23 @@ defmodule Symphony.HTTP do
     _url()
   end
 
+  def url(segments, query) do
+    uri = URI.parse(_url())
+
+    uri =
+      case segments do
+        [] -> uri
+        _  -> %{uri | path: Path.join([uri.path| segments])}
+      end
+    uri =
+      case query do
+        [] -> uri
+        _  -> %{uri | query: URI.encode_query(query)}
+      end
+
+    URI.to_string(uri)
+  end
+
   def headers() do
     _headers()
   end
@@ -30,13 +47,15 @@ defmodule Symphony.HTTP do
 
   defp _headers() do
     [
-      auth_header()
+      auth_header(),
+      {"Accept", "application/json"},
+      {"Content-Type", "application/json"}
     ]
   end
 
   defp auth_header() do
     api_key = Config.api_key
     api_key = Base.encode64(api_key)
-    {'Authorization', 'Basic #{api_key}'}
+    {"Authorization", "Basic #{api_key}"}
   end
 end

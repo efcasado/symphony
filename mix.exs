@@ -31,6 +31,7 @@ defmodule Symphony.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 0.9.0"},
+      {:poison, "~> 2.0"},
       # Test dependencies
       {:credo, "~> 0.4", only: [:dev, :test]},
       {:excoveralls, "~> 0.5", only: :test}
