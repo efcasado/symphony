@@ -12,7 +12,7 @@ defmodule Symphony do
 
   ## API
   ##=======================================================================
-  def ping do
+  def ping() do
     headers = HTTP.headers
     url = HTTP.url
 
@@ -21,7 +21,7 @@ defmodule Symphony do
         case resp.status_code do
           200 ->
             :ok
-          401 ->
+          _ ->
             {:error, resp}
         end
       {:error, error} -> {error, :error}
